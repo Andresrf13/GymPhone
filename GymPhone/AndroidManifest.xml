@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.gymphone"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="8"
+        android:targetSdkVersion="8" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+        <activity
+            android:name="com.example.gymphone.LoginActivity"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity  android:name="com.example.gymphone.MenuActivity"></activity>
+        <activity  android:name="com.example.gymphone.TiposRutinasActivity"></activity>
+        <activity  android:name="com.example.gymphone.PerfilActivity"></activity>
+        <activity  android:name="com.example.gymphone.AyudaActivity"></activity>
+        <activity  android:name="com.example.gymphone.RutinasSistemaActivity"></activity>
+        <activity  android:name="com.example.gymphone.RutinasPropiaActivity"></activity>
+        <activity  android:name="com.example.gymphone.RankingActivity"></activity>
+        <activity  android:name="com.example.gymphone.ActualizarActivity"></activity>           
+    </application>
+
+</manifest>
