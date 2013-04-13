@@ -28,8 +28,6 @@ public final class R {
     public static final class id {
         public static final int action_settings=0x7f08000f;
         public static final int button1=0x7f080001;
-        public static final int editText1=0x7f080006;
-        public static final int editText2=0x7f080005;
         public static final int editText3=0x7f080008;
         public static final int gridPosiciones=0x7f08000b;
         public static final int imageView1=0x7f080004;
@@ -38,10 +36,12 @@ public final class R {
         public static final int listaRutinaPropia=0x7f08000d;
         public static final int listaRutinasGeneral=0x7f08000c;
         public static final int listaRutinasSistema=0x7f08000e;
+        public static final int password_space=0x7f080005;
         public static final int textView1=0x7f080000;
         public static final int textView2=0x7f080002;
         public static final int textView3=0x7f08000a;
         public static final int textView4=0x7f080009;
+        public static final int username_space=0x7f080006;
     }
     public static final class layout {
         public static final int activity_actualizar=0x7f030000;

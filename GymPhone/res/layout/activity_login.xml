@@ -19,17 +19,17 @@
         android:src="@drawable/logo" />
     
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/password_space"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/editText1"
-        android:layout_below="@+id/editText1"
+        android:layout_alignLeft="@+id/username_space"
+        android:layout_below="@+id/username_space"
         android:layout_marginTop="62dp"
         android:ems="10"
         android:inputType="textPassword" />
 
     <EditText
-        android:id="@+id/editText1"
+        android:id="@+id/username_space"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/imageView1"
@@ -55,7 +55,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/textView1"
-        android:layout_below="@+id/editText1"
+        android:layout_below="@+id/username_space"
         android:layout_marginTop="30dp"
         android:text="@string/login_pass"
         android:textAppearance="?android:attr/textAppearanceMedium" />
