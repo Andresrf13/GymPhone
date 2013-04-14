@@ -58,24 +58,71 @@ public class DataSourceService {
 		
 		return nuevo_usuario;
 		}
+	
+	//---------------------------------------ACTUALIZAR PERFIL DE PERSONA ------------------------------//
 
-	public int update_perfil(String nombre, String edad1, String estatura1, String peso1) {
-		// TODO Auto-generated method stub
-		//String Line = "UPDATE usuarios SET edad="+edad1+", estatura="+estatura1+", peso="+peso1+" WHERE username='"+nombre+"';";
+	public int update_perfil(String nombre, String edad1, String estatura1, String peso1) {		
 		ContentValues cv=new ContentValues();
 		cv.put("edad",edad1);
 		cv.put("altura",estatura1);
-		cv.put("peso",peso1);				
-		//database.beginTransaction();
+		cv.put("peso",peso1);						
 		this.open();
 		int resp = 0;
-		resp = database.update("usuarios", cv, "username='"+nombre+"'", null);
-		//database.insert("usuarios", null, cv);
+		resp = database.update("usuarios", cv, "username='"+nombre+"'", null);		
 		this.close();
-		//database.execSQL(Line);
-		//database.endTransaction();
+		
 				
 		return resp;
 	}
 
+	 //----------------------------------OBTENER EJERCICIOS EN BASE DE DATOS --------------------//
+	public List<Ejercicios> getEjercicios() {
+		List<Ejercicios> ejercicio = new ArrayList<Ejercicios>(); 
+		String[] columnas = {"id_ejercicio", "ejercicio_name", "tipo", "instrucciones"};
+		Cursor c = database.query("ejercicio", columnas, null, null, null, null, null);
+		
+		c.moveToFirst();
+		while (!c.isAfterLast()) {
+			Ejercicios obtiene = SetEjerjcio(c);
+			ejercicio.add(obtiene);
+			c.moveToNext();
+		}
+		
+		c.close();
+		return ejercicio;		
+	}
+
+	private Ejercicios SetEjerjcio(Cursor c) {
+		Ejercicios nuevo_ejercicio = new Ejercicios();
+		nuevo_ejercicio.setid(c.getLong(0));
+		nuevo_ejercicio.setejercicio_name(c.getString(1));
+		nuevo_ejercicio.settipo(c.getString(2));
+		nuevo_ejercicio.setinstrucciones(c.getString(3));
+		return nuevo_ejercicio;
+	}
+
+	//----------------------------------OBTENER RUTINAS ---------------------------//
+	public List<Rutinas> getRutinas() {
+		List<Rutinas> rutina = new ArrayList<Rutinas>(); 
+		String[] columnas = {"id_rutina", "rutina_name", "pertenece"};
+		Cursor c = database.query("rutinas", columnas, null, null, null, null, null);
+		
+		c.moveToFirst();
+		while (!c.isAfterLast()) {
+			Rutinas obtiene = setRutina(c);
+			rutina.add(obtiene);
+			c.moveToNext();
+		}
+		
+		c.close();
+		return rutina;		
+	}
+
+	private Rutinas setRutina(Cursor c) {
+		Rutinas nueva_rutina = new Rutinas();
+		nueva_rutina.setid(c.getLong(0));
+		nueva_rutina.setname(c.getString(1));
+		nueva_rutina.setpertenece(c.getString(2));		
+		return nueva_rutina;
+	}
 }

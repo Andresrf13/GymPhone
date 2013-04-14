@@ -1,0 +1,70 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+  android:orientation="vertical"
+    android:layout_height="match_parent" 
+    android:layout_width="match_parent">
+    
+
+    <TextView
+	         android:id="@+id/textView3"
+	         android:layout_width="wrap_content"
+	         android:layout_height="wrap_content"
+	         android:text="@string/titulo_menuejericios"
+	         android:textAppearance="?android:attr/textAppearanceLarge" />
+	     		    
+
+<TabHost android:id="@android:id/tabhost" 
+		 android:layout_width="match_parent" 
+		 android:layout_height="match_parent"
+		 android:layout_marginTop="30sp">
+
+	 <RelativeLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">	     
+
+	     <TabWidget android:layout_width="match_parent" 
+	     			android:layout_height="wrap_content" 
+	     			android:id="@android:id/tabs" 
+	     			/>
+
+	     <FrameLayout android:layout_width="match_parent" 
+	     			  android:layout_height="match_parent" 
+	     			  android:id="@android:id/tabcontent" >
+
+	     	<RelativeLayout
+	     	    android:id="@+id/tab1"
+	     	    android:layout_width="match_parent"
+	     	    android:layout_height="416dp"
+	     	    android:orientation="vertical" >
+
+	    		<ListView
+	    		    android:id="@+id/listacardio"
+	    		    android:layout_width="match_parent"
+	    		    android:layout_height="wrap_content"	    		    
+	    		    android:layout_marginTop="50dp" >
+	    		</ListView>
+			</RelativeLayout>
+
+	     	<RelativeLayout android:id="@+id/tab2"
+				android:layout_width="match_parent"
+	     	    android:layout_height="416dp"
+	     	    android:orientation="vertical" >
+	    		    
+		 	<ListView
+	    		    android:id="@+id/listafuerza"
+	    		    android:layout_width="match_parent"
+	    		    android:layout_height="wrap_content"
+	    		    android:layout_marginTop="50dp" > 
+	    	</ListView> 
+	    	
+			</RelativeLayout>
+
+	     </FrameLayout>
+
+	</RelativeLayout>
+   
+  
+</TabHost>
+
+</RelativeLayout>

@@ -29,7 +29,8 @@
         <activity  android:name="com.example.gymphone.RutinasSistemaActivity"></activity>
         <activity  android:name="com.example.gymphone.RutinasPropiaActivity"></activity>
         <activity  android:name="com.example.gymphone.RankingActivity"></activity>
-        <activity  android:name="com.example.gymphone.ActualizarActivity"></activity>           
+        <activity  android:name="com.example.gymphone.ActualizarActivity"></activity>
+        <activity  android:name="com.example.gymphone.MenuEjerciciosActivity"></activity>           
     </application>
 
 </manifest>

@@ -1,6 +1,7 @@
 package com.example.gymphone;
 
 import java.util.ArrayList;
+import java.util.List;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -13,7 +14,7 @@ import android.widget.Toast;
 
 public class RutinasPropiaActivity  extends Activity
 {
-
+	private DataSourceService rutina_sistema;
 	ListView listamenu;
 	ArrayAdapter<String> adaptador;
 	ArrayList<String> datos;
@@ -42,8 +43,16 @@ public class RutinasPropiaActivity  extends Activity
 	}
 	
 	public void llenarlista(){
-		datos.add("Positivismo");
-		datos.add("Correr lunes");
-		datos.add("fuerza de miercoles");		
+		List<Rutinas> rutina_db;		
+		DataSourceService rutina_sistema = new DataSourceService(this);
+		rutina_sistema.open();
+		rutina_db = rutina_sistema.getRutinas();
+		rutina_sistema.close();
+		
+		for (int i=0; i < rutina_db.size(); i++ ){
+			if(rutina_db.get(i).getpertenece().equals("propia"))
+				datos.add(rutina_db.get(i).rutina_name);
+		}
+		rutina_sistema.close();		
 	}
 }

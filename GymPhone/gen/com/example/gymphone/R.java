@@ -26,23 +26,27 @@ public final class R {
         public static final int logo=0x7f020002;
     }
     public static final class id {
-        public static final int action_settings=0x7f080011;
+        public static final int action_settings=0x7f080015;
         public static final int button1=0x7f080001;
-        public static final int edad_perfil=0x7f080008;
-        public static final int estura_perfil=0x7f08000a;
-        public static final int gridPosiciones=0x7f08000d;
+        public static final int edad_perfil=0x7f08000d;
+        public static final int estura_perfil=0x7f08000e;
+        public static final int gridPosiciones=0x7f080011;
         public static final int imageView1=0x7f080004;
         public static final int listaAyuda=0x7f080003;
         public static final int listaMenu=0x7f080007;
-        public static final int listaRutinaPropia=0x7f08000f;
-        public static final int listaRutinasGeneral=0x7f08000e;
-        public static final int listaRutinasSistema=0x7f080010;
+        public static final int listaRutinaPropia=0x7f080013;
+        public static final int listaRutinasGeneral=0x7f080012;
+        public static final int listaRutinasSistema=0x7f080014;
+        public static final int listacardio=0x7f08000a;
+        public static final int listafuerza=0x7f08000c;
         public static final int password_space=0x7f080005;
-        public static final int peso_perfil=0x7f08000b;
+        public static final int peso_perfil=0x7f08000f;
+        public static final int tab1=0x7f080009;
+        public static final int tab2=0x7f08000b;
         public static final int textView1=0x7f080000;
         public static final int textView2=0x7f080002;
-        public static final int textView3=0x7f080009;
-        public static final int textView4=0x7f08000c;
+        public static final int textView3=0x7f080008;
+        public static final int textView4=0x7f080010;
         public static final int username_space=0x7f080006;
     }
     public static final class layout {
@@ -50,11 +54,12 @@ public final class R {
         public static final int activity_ayuda=0x7f030001;
         public static final int activity_login=0x7f030002;
         public static final int activity_menu=0x7f030003;
-        public static final int activity_perfil=0x7f030004;
-        public static final int activity_ranking=0x7f030005;
-        public static final int activity_rutinas=0x7f030006;
-        public static final int activity_rutinas_creadas=0x7f030007;
-        public static final int activity_rutinas_sistema=0x7f030008;
+        public static final int activity_menuejercicios=0x7f030004;
+        public static final int activity_perfil=0x7f030005;
+        public static final int activity_ranking=0x7f030006;
+        public static final int activity_rutinas=0x7f030007;
+        public static final int activity_rutinas_creadas=0x7f030008;
+        public static final int activity_rutinas_sistema=0x7f030009;
     }
     public static final class menu {
         public static final int login=0x7f070000;
@@ -89,6 +94,7 @@ public final class R {
         public static final int rutinas_sistema=0x7f05000f;
         public static final int salir=0x7f050011;
         public static final int sistema_titulo=0x7f050018;
+        public static final int titulo_menuejericios=0x7f05001e;
         public static final int titulo_rutinas=0x7f05000e;
     }
     public static final class style {

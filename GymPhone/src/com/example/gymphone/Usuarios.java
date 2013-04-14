@@ -5,8 +5,8 @@ public class Usuarios {
 	private String nombre;
 	private String contrasena;
 	private long edad;
-	private float altura;
-	private float peso;
+	private long altura;
+	private long peso;
 	
 	public long getid(){
 		return this.id;	
@@ -24,11 +24,11 @@ public class Usuarios {
 		return this.edad;	
 	}
 	
-	public float getaltura(){
+	public long getaltura(){
 		return this.altura;	
 	}
 	
-	public float getpeso(){
+	public long getpeso(){
 		return this.peso;	
 	}
 	
@@ -48,11 +48,11 @@ public class Usuarios {
 		this.edad = l;	
 	}
 	
-	public void setaltura(float l){
+	public void setaltura(long l){
 		this.altura = l;	
 	}
 	
-	public void setpeso(float l){
+	public void setpeso(long l){
 		this.peso = l;	
 	}
 }

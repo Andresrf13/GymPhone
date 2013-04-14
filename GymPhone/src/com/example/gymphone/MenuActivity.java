@@ -39,6 +39,7 @@ public class MenuActivity extends Activity{
 		final Intent irayuda = new Intent(this, AyudaActivity.class);
 		final Intent irranking = new Intent(this, RankingActivity.class);
 		final Intent iractualizar = new Intent(this, ActualizarActivity.class);
+		final Intent irmenuejercicios = new Intent(this, MenuEjerciciosActivity.class);
 		listamenu.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
 			@Override
@@ -51,6 +52,11 @@ public class MenuActivity extends Activity{
 				case 0:
 				{										
 					startActivity(irperfil);
+					break;
+				}
+				case 1:
+				{										
+					startActivity(irmenuejercicios);
 					break;
 				}
 				case 2:
