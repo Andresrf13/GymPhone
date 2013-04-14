@@ -12,73 +12,74 @@
         android:layout_marginTop="30dp"
         android:text="@string/perfil_titulo"
         android:textAppearance="?android:attr/textAppearanceLarge" />
-
-    <EditText
-        android:id="@+id/editText3"
+    
+    <TextView
+        android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/username_space"
-        android:layout_below="@+id/textView4"
-        android:layout_marginTop="18dp"
-        android:ems="10"
-        android:inputType="numberDecimal" />
+        android:layout_above="@+id/edad_perfil"
+        android:layout_alignLeft="@+id/textView1"
+        android:text="@string/perfil_edad"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <EditText
-        android:id="@+id/password_space"
+        android:id="@+id/edad_perfil"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_above="@+id/textView3"
         android:layout_centerHorizontal="true"
+        android:layout_marginBottom="23dp"
         android:ems="10"
         android:inputType="numberDecimal" />
+
+    <EditText
+        android:id="@+id/estura_perfil"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/edad_perfil"
+        android:layout_centerVertical="true"
+        android:ems="10"
+        android:inputType="numberDecimal" >        
+    </EditText>
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/peso_perfil"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="22dp"
+        android:onClick="irMenu"
+        android:text="@string/perfil_actualizar" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/username_space"
+        android:layout_above="@+id/estura_perfil"
         android:layout_centerHorizontal="true"
-        android:layout_marginBottom="16dp"
         android:text="@string/perfil_estatura"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <EditText
-        android:id="@+id/username_space"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/password_space"
-        android:layout_centerVertical="true"
-        android:ems="10"
-        android:inputType="numberDecimal" />
-
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/password_space"
-        android:layout_alignLeft="@+id/textView3"
-        android:layout_marginBottom="15dp"
-        android:text="@string/perfil_edad"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <TextView
         android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/username_space"
+        android:layout_below="@+id/estura_perfil"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="18dp"
+        android:layout_marginTop="39dp"
         android:text="@string/perfil_peso"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
-    <Button
-        android:id="@+id/button1"
+    <EditText
+        android:id="@+id/peso_perfil"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/editText3"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="22dp"
-        android:text="@string/perfil_actualizar"
-        android:onClick="irMenu" />
+        android:layout_alignLeft="@+id/estura_perfil"
+        android:layout_below="@+id/textView4"
+        android:ems="10"
+        android:inputType="numberDecimal" />
+
+    
 
 </RelativeLayout>

@@ -40,7 +40,7 @@ public class LoginActivity extends Activity {
 		String a3 = user.getText().toString();
 		String a4 = pass.getText().toString();
 		boolean x = false;
-						
+				
 				
 		for (int i=0; i < user_db.size(); i++ )
 		{
@@ -52,6 +52,7 @@ public class LoginActivity extends Activity {
 			if((res.equals(a4))&&(a1.equals(a3)))
 			{				
 				Intent irmenu = new Intent (this, MenuActivity.class);
+				irmenu.putExtra("pase1", a1);
 				startActivity(irmenu);
 				x=true;
 				user.setText("");
