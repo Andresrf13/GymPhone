@@ -30,7 +30,9 @@
         <activity  android:name="com.example.gymphone.RutinasPropiaActivity"></activity>
         <activity  android:name="com.example.gymphone.RankingActivity"></activity>
         <activity  android:name="com.example.gymphone.ActualizarActivity"></activity>
-        <activity  android:name="com.example.gymphone.MenuEjerciciosActivity"></activity>           
+        <activity  android:name="com.example.gymphone.MenuEjerciciosActivity"></activity>
+        <activity  android:name="com.example.gymphone.EstadisticasActivity"></activity>
+        <activity  android:name="com.example.gymphone.CrearRutinaActivity"></activity>             
     </application>
 
 </manifest>

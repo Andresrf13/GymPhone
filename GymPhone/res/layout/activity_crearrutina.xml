@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+  <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+    		android:layout_height="match_parent"    
+    		android:orientation="vertical" >
+             <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Crear Rutina"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+	    <TextView
+	        android:id="@+id/textView2"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="Nombre de Nueva Rutina:"
+	        android:layout_margin="10sp"
+	        android:textAppearance="?android:attr/textAppearanceMedium" />
+	
+	    <EditText
+	        android:id="@+id/newname_rutina"
+	        android:layout_width="match_parent"
+	        android:layout_height="wrap_content"
+	        android:layout_margin="10sp"
+	        android:ems="10" >
+	
+	        <requestFocus />
+	    </EditText>
+	
+	    <TextView
+	        android:id="@+id/textView3"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="Agregar ejercicio a rutina:"
+	        android:layout_margin="10sp"
+	        android:textAppearance="?android:attr/textAppearanceMedium" />
+	
+	    <Spinner
+	        android:id="@+id/ejercicios_spinner"
+	        android:layout_width="match_parent"
+	        android:layout_margin="10sp"
+	        android:layout_height="wrap_content" />
+	
+	    <Button
+	        android:id="@+id/button1"
+	        style="?android:attr/buttonStyleSmall"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_margin="10sp"
+	        android:text="Agregar Ejercicio" />
+
+	    <TextView
+	        android:id="@+id/textView4"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:text="Lista de Ejercicios"
+	        android:textAppearance="?android:attr/textAppearanceSmall" />
+
+	    <ListView
+	        android:id="@+id/lista_ejercicios"
+	        android:layout_width="match_parent"
+	        android:layout_height="61dp" >
+	    </ListView>
+	    
+        </LinearLayout>
+
+         <Button
+             android:id="@+id/finalizar_rutina"             
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_alignParentBottom="true"
+             android:layout_alignParentLeft="true"
+             android:layout_margin="10sp"
+             android:layout_marginLeft="33dp"
+             android:text="Finalizar Rutina" />
+
+         <Button
+             android:id="@+id/cancelar_rutina"             
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_alignParentBottom="true"
+             android:layout_alignParentRight="true"
+             android:layout_margin="10sp"
+             android:layout_marginRight="33dp"
+             android:text="Cancelar Rutina" />
+        
+    </RelativeLayout>
+

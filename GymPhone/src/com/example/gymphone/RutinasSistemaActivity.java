@@ -34,7 +34,7 @@ public class RutinasSistemaActivity extends Activity{
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View vista, int posicion,
 					long arg3) {
-				Toast.makeText(getApplication(), "Clic en: "+(String)((TextView)vista).getText(),Toast.LENGTH_LONG ).show();				// 
+				Toast.makeText(getApplication(), "Clic en: "+(String)((TextView)vista).getText(),Toast.LENGTH_LONG ).show();				 
 				
 			}
 			

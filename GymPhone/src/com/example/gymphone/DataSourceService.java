@@ -1,6 +1,5 @@
 package com.example.gymphone;
 
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,6 +8,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
+import android.widget.Toast;
 
 
 
@@ -125,4 +125,75 @@ public class DataSourceService {
 		nueva_rutina.setpertenece(c.getString(2));		
 		return nueva_rutina;
 	}
+	
+	//----------------------------------OBTENER LISTA_RUTINAS ---------------------------//
+		public List<Lista_Rutinas> getListaRutinas() {
+			List<Lista_Rutinas> rutina = new ArrayList<Lista_Rutinas>(); 
+			String[] columnas = {"id_listarutina", "rutina", "listarutina_name"};
+			Cursor c = database.query("lista_rutinas", columnas, null, null, null, null, null);
+			
+			c.moveToFirst();
+			while (!c.isAfterLast()) {
+				Lista_Rutinas obtiene = setListaRutina(c);
+				rutina.add(obtiene);
+				c.moveToNext();
+			}
+			
+			c.close();
+			return rutina;		
+		}
+
+		private Lista_Rutinas setListaRutina(Cursor c) {
+			Lista_Rutinas nueva_rutina = new Lista_Rutinas();
+			nueva_rutina.setid(c.getLong(0));	
+			nueva_rutina.setrutina_id(c.getLong(1));
+			nueva_rutina.setname(c.getString(2));
+			return nueva_rutina;
+		}
+
+		
+		//---------------------------------------------OBTENER LISTA_EJERCICIOS-----------------------------/
+		public List<Lista_ejercicios> getListaEjercicios(long x) {	
+			String s = String.valueOf(x);
+			String[] args = {s};
+			List<Lista_ejercicios> ejercicios = new ArrayList<Lista_ejercicios>(); 
+			String[] columnas = {"id_lista", "ejercicio", "rutina", "calorias", "tiempo"};
+			Cursor c = database.query("lista_ejercicios", columnas, "rutina=?", args, null, null, null);
+			
+			c.moveToFirst();
+			while (!c.isAfterLast()) {
+				Lista_ejercicios obtiene = setListaEjercicios(c);
+				ejercicios.add(obtiene);
+				c.moveToNext();
+			}
+			
+			c.close();
+			return ejercicios;		
+		}
+
+		private Lista_ejercicios setListaEjercicios(Cursor c) {
+			Lista_ejercicios nuevo_ejercicio = new Lista_ejercicios();
+			nuevo_ejercicio.setid_lista(c.getLong(0));	
+			nuevo_ejercicio.setejercicio(c.getString(1));
+			nuevo_ejercicio.setrutina(c.getLong(2));
+			nuevo_ejercicio.setcalorias(c.getLong(3));
+			nuevo_ejercicio.settiempo(c.getLong(4));
+			return nuevo_ejercicio;
+		}
+
+		public List<Lista_ejercicios> getListaEjercicios() {					
+			List<Lista_ejercicios> ejercicios = new ArrayList<Lista_ejercicios>(); 
+			String[] columnas = {"id_lista", "ejercicio", "rutina", "calorias", "tiempo"};
+			Cursor c = database.query("lista_ejercicios", columnas, null, null, null, null, null);
+			
+			c.moveToFirst();
+			while (!c.isAfterLast()) {
+				Lista_ejercicios obtiene = setListaEjercicios(c);
+				ejercicios.add(obtiene);
+				c.moveToNext();
+			}
+			
+			c.close();
+			return ejercicios;			
+		}
 }

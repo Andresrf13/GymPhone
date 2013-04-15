@@ -1,0 +1,132 @@
+<RelativeLayout xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:android1="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:text="@string/menu_estadisticas"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <Spinner
+        android:id="@+id/spinner1"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/textView1"
+        android:layout_marginTop="20dp" />
+
+    <TabHost
+        android:id="@android:id/tabhost"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"        
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginTop="100sp" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+            </TabWidget>
+
+            <FrameLayout
+                android:id="@android:id/tabcontent"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" >
+
+                <LinearLayout
+                    android:id="@+id/tab1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical" >
+                    
+                    <TextView
+				        android:id="@+id/textViewtest"
+				        android:layout_width="wrap_content"
+				        android:layout_height="wrap_content"				        
+				        android:text="Información"
+				        android:textAppearance="?android:attr/textAppearanceLarge" />                                       
+                    
+                    <TextView
+                        android:id="@+id/avance_estadistica"
+                        android:layout_marginTop="15dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"                        
+                        android:text="rutina seleccionada:  " />
+                    
+                    <TextView
+                        android:id="@+id/tiempo_estadistica"
+                        android:layout_marginTop="15dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"                        
+                        android:text="Tiempo dedicado: " />
+                    
+                    <TextView
+                        android:id="@+id/calorias_estadistica"
+                        android:layout_marginTop="15dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"                        
+                        android:text="Calorias quemadas: " />
+                                        
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/tab2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"  >
+                    
+                     <TextView
+				        android:id="@+id/textViewtest123"
+				        android:layout_width="wrap_content"
+				        android:layout_height="wrap_content"				       
+				        android:text="Información"
+				        android:textAppearance="?android:attr/textAppearanceLarge" />
+                     
+                     <TextView
+                        android:id="@+id/textViewinfo2"
+                        android:layout_marginTop="15dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"                        
+                        android:text="Seleccione Ejercicio a consultar" />
+                     
+                      <Spinner
+				        android:id="@+id/spinner2"
+				        android:layout_width="fill_parent"
+				        android:layout_height="wrap_content"
+				        android:layout_alignParentLeft="true"
+				        android:layout_below="@+id/textView1"
+				        android:layout_marginTop="20dp" />
+                      
+                      <TextView
+                        android:id="@+id/tiempo2_estadistica"
+                        android:layout_marginTop="15dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"                        
+                        android:text="Tiempo dedicado: " />
+                    
+                    <TextView
+                        android:id="@+id/calorias2_estadistica"
+                        android:layout_marginTop="15dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"                        
+                        android:text="Calorias quemadas: " />
+                </LinearLayout>
+                
+            </FrameLayout>
+        </LinearLayout>
+    </TabHost>
+
+</RelativeLayout>

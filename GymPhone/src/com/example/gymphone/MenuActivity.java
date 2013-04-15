@@ -40,6 +40,7 @@ public class MenuActivity extends Activity{
 		final Intent irranking = new Intent(this, RankingActivity.class);
 		final Intent iractualizar = new Intent(this, ActualizarActivity.class);
 		final Intent irmenuejercicios = new Intent(this, MenuEjerciciosActivity.class);
+		final Intent irestadisticas = new Intent(this, EstadisticasActivity.class);
 		listamenu.setOnItemClickListener(new AdapterView.OnItemClickListener() {
 
 			@Override
@@ -67,6 +68,11 @@ public class MenuActivity extends Activity{
 				case 3:
 				{					
 					startActivity(irranking);
+					break;
+				}
+				case 4:
+				{					
+					startActivity(irestadisticas);
 					break;
 				}
 				case 5:
