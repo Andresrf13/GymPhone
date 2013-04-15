@@ -20,7 +20,17 @@
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/textView1"
         android:layout_marginLeft="29dp"
-        android:layout_marginTop="40dp" >
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="50dp" >
     </ListView>
+
+    <Button
+        android:id="@+id/crear_rutina"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="Crear Nueva Rutina"
+        android:onClick="ircrearRutina" />
 
 </RelativeLayout>

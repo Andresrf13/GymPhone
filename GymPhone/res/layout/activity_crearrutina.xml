@@ -47,12 +47,13 @@
 	        android:layout_height="wrap_content" />
 	
 	    <Button
-	        android:id="@+id/button1"
+	        android:id="@+id/add_ejercicio"
 	        style="?android:attr/buttonStyleSmall"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:layout_margin="10sp"
-	        android:text="Agregar Ejercicio" />
+	        android:text="Agregar Ejercicio"
+	        android:onClick="add_ejercicio" />
 
 	    <TextView
 	        android:id="@+id/textView4"
@@ -62,7 +63,7 @@
 	        android:textAppearance="?android:attr/textAppearanceSmall" />
 
 	    <ListView
-	        android:id="@+id/lista_ejercicios"
+	        android:id="@+id/lista_ejercicios1"
 	        android:layout_width="match_parent"
 	        android:layout_height="61dp" >
 	    </ListView>
@@ -76,8 +77,9 @@
              android:layout_alignParentBottom="true"
              android:layout_alignParentLeft="true"
              android:layout_margin="10sp"
-             android:layout_marginLeft="33dp"
-             android:text="Finalizar Rutina" />
+             android:layout_marginLeft="33dp"             
+             android:text="Crear Rutina"
+             android:onClick="crear_rutina" />
 
          <Button
              android:id="@+id/cancelar_rutina"             

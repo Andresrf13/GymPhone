@@ -196,4 +196,47 @@ public class DataSourceService {
 			c.close();
 			return ejercicios;			
 		}
+
+		
+		//----------------------------INSERTAR UNA RUTINA EN LA BASE DE DATOS -------------------//
+		public int insertarrutina(String nombre_nueva) {
+			ContentValues nuevoRegistro = new ContentValues();
+			nuevoRegistro.put("rutina_name", nombre_nueva);
+			nuevoRegistro.put("pertenece","propia");
+			database.insert("rutinas", null, nuevoRegistro);
+			
+			String[] args = {nombre_nueva};
+			String[] columnas = {"id_rutina", "rutina_name", "pertenece"};
+			Cursor c = database.query("rutinas", columnas, "rutina_name=?", args, null, null, null);
+			c.moveToFirst();
+			int x = c.getInt(0);
+			c.close();
+			return x;
+		}
+
+		//----------------------------INSERTAR UNA RUTINA EN LA BASE DE DATOS -------------------//
+		public int insertarlistarutina(int id_insert, String nombre_nueva) {
+			ContentValues nuevoRegistro = new ContentValues();
+			nuevoRegistro.put("rutina", id_insert);
+			nuevoRegistro.put("listarutina_name", nombre_nueva);
+			database.insert("lista_rutinas", null, nuevoRegistro);
+			
+			String[] args = {nombre_nueva};
+			String[] columnas = {"id_listarutina", "rutina", "listarutina_name"};
+			Cursor c = database.query("lista_rutinas", columnas, "listarutina_name=?", args, null, null, null);
+			c.moveToFirst();
+			int x = c.getInt(0);
+			c.close();
+			return x;			
+		}
+
+		public void insertarejercicio(Lista_ejercicios lista_ejercicios, int g) {
+			ContentValues nuevoRegistro = new ContentValues();
+			nuevoRegistro.put("ejercicio", lista_ejercicios.getejercicio());
+			nuevoRegistro.put("rutina", g);
+			nuevoRegistro.put("calorias", lista_ejercicios.getcalorias());
+			nuevoRegistro.put("tiempo", lista_ejercicios.gettiempo());
+			database.insert("lista_ejercicios", null, nuevoRegistro);			
+			
+		}
 }
