@@ -239,4 +239,41 @@ public class DataSourceService {
 			database.insert("lista_ejercicios", null, nuevoRegistro);			
 			
 		}
+
+		
+		//-----------------------OBTIENE EL EJERCICIO PARA LA PAGINA EJERCICIOS-------------//
+		public Ejercicios getEjercicio(String name_ejercicio) {
+			Ejercicios examp = new Ejercicios();
+			String[] args = {name_ejercicio};			
+			String[] columnas = {"id_ejercicio", "ejercicio_name", "tipo", "instrucciones"};
+			Cursor c = database.query("ejercicio", columnas, "ejercicio_name=?", args, null, null, null);
+			c.moveToFirst();
+			examp.setid(c.getInt(0));
+			examp.setejercicio_name(c.getString(1));
+			examp.settipo(c.getString(2));
+			examp.setinstrucciones(c.getString(3));			
+			c.close();
+			return examp;
+		}
+		
+		//-----------------------OBTIENE EL AYUDA INFO PARA LA PAGINA AYUDAFORMAT-------------//
+		public String getAyuda(String name_ejercicio) {					
+			String[] args = {name_ejercicio};			
+			String[] columnas = {"id_ayuda", "name", "hablada"};
+			Cursor c = database.query("ayuda", columnas, "name=?", args, null, null, null);
+			c.moveToFirst();			
+			String result = c.getString(2);							
+			c.close();
+			return result;
+		}
+		
+		public int getAyuda1(String name_ejercicio) {					
+			String[] args = {name_ejercicio};			
+			String[] columnas = {"id_ayuda", "name", "hablada"};
+			Cursor c = database.query("ayuda", columnas, "name=?", args, null, null, null);
+			c.moveToFirst();			
+			int result = c.getInt(0);							
+			c.close();
+			return result;
+		}
 }

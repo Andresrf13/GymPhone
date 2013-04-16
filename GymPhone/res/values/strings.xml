@@ -32,6 +32,8 @@
     <string name="actualizar_buscar">Buscar Actualizaciones ahora</string>
     <string name="actualizar_boton">Actualizar</string>
     <string name="titulo_menuejericios">Ejercicios</string>
+    <string name="inicio">Inicio</string>
+     <string name="detener">Detener</string>
     
 
 </resources>

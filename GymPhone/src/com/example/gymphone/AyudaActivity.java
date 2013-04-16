@@ -3,6 +3,7 @@ package com.example.gymphone;
 import java.util.ArrayList;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -27,14 +28,17 @@ public class AyudaActivity extends Activity{
 		listamenu = (ListView) findViewById(R.id.listaAyuda);
 		adaptador = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, datos);
 		listamenu.setAdapter(adaptador);
+		final Intent irayudaformat = new Intent(this, AyudaformatActivity.class);
 		
 		listamenu.setOnItemClickListener(new AdapterView.OnItemClickListener(){
 
 			@Override
 			public void onItemClick(AdapterView<?> arg0, View vista, int posicion,
 					long arg3) {
-				Toast.makeText(getApplication(), "Clic en: "+(String)((TextView)vista).getText(),Toast.LENGTH_LONG ).show();				// 
-				
+				//Toast.makeText(getApplication(), "Clic en: "+(String)((TextView)vista).getText(),Toast.LENGTH_LONG ).show();				//
+				String funcion = (String)((TextView)vista).getText();
+				irayudaformat.putExtra("title", funcion);
+				startActivity(irayudaformat);
 			}
 			
 		});	

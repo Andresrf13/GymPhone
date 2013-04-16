@@ -5,12 +5,16 @@ import java.util.List;
 
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.util.Log;
 import android.view.Menu;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.TabHost;
+import android.widget.Toast;
 import android.widget.TabHost.OnTabChangeListener;
 
 public class MenuEjerciciosActivity extends Activity {	
@@ -33,7 +37,8 @@ public class MenuEjerciciosActivity extends Activity {
 		listafuerza = (ListView) findViewById(R.id.listafuerza);
 		adaptador = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, datos);
 		listafuerza.setAdapter(adaptador);
-
+		
+		final Intent irejercicio = new Intent(this, RealizarEjercicioActivity.class);
         	
 		   Resources res = getResources();
 	        
@@ -65,6 +70,30 @@ public class MenuEjerciciosActivity extends Activity {
 					Log.i("AndroidTabsDemo", "Pulsada pestaña: " + tabId);
 				}
 			});
+	        
+	        //-----------------------ESTAN AL REVES Y NADIE SABE PORQUE -----------------------//
+		listacardio.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view, int pos,
+					long arg3) {
+					String seleccionado = ((String) parent.getItemAtPosition(pos)).toString();
+					irejercicio.putExtra("ejercicio1", seleccionado);
+					//Toast.makeText(getApplication(),"ITEM "+seleccionado, Toast.LENGTH_LONG).show();
+					startActivity(irejercicio);
+			}					
+		});		
+		listafuerza.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+
+			@Override
+			public void onItemClick(AdapterView<?> parent, View view, int pos,
+					long arg3) {
+					String seleccionado = ((String) parent.getItemAtPosition(pos)).toString();
+					//Toast.makeText(getApplication(),"ITEM "+seleccionado, Toast.LENGTH_LONG).show();
+					irejercicio.putExtra("ejercicio1", seleccionado);
+					startActivity(irejercicio);
+			}					
+		});
 		
 	}
 	
@@ -75,12 +104,7 @@ public class MenuEjerciciosActivity extends Activity {
 		return true;
 	}
 	
-	public void llenarlista(){
-		/*datos.add("Banco");
-		datos.add("Columna de Cable");
-		datos.add("Doble polea");
-		datos.add("Estante energia");
-		datos.add("Pesas");*/
+	public void llenarlista(){		
 		List<Ejercicios> ejercicios_db;		
 		menu_ejercicios = new DataSourceService(this);
 		menu_ejercicios.open();
@@ -106,5 +130,7 @@ public class MenuEjerciciosActivity extends Activity {
 		}
 		menu_ejercicios.close();
 	}
+	
+	
 }
 
