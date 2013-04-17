@@ -65,6 +65,7 @@ public class CrearRutinaActivity extends Activity implements OnItemSelectedListe
 	public void add_ejercicio(View view){		
 		String seleccionado = (String) listajercicios.getSelectedItem();
 		boolean esta= false;
+		boolean esta1= false;
 		if (0 != newejercicios_Agregar.size())
 		{
 			for(int r=0; r<newejercicios_Agregar.size(); r++){
@@ -83,9 +84,10 @@ public class CrearRutinaActivity extends Activity implements OnItemSelectedListe
 			lista_array.add(seleccionado);
 			lista_add.refreshDrawableState();
 			Toast.makeText(getApplication(),"La rutina "+seleccionado+" Insertado", Toast.LENGTH_SHORT).show();
+			esta1= true;
 		}
-		if(esta== true){
-			Toast.makeText(getApplication(),"La rutina "+seleccionado+" ya esta agregada.", Toast.LENGTH_LONG).show();
+		if(esta== true && esta1==false){
+			Toast.makeText(getApplication(),"La rutina "+seleccionado+" ya esta agregada.", Toast.LENGTH_SHORT).show();
 		}
 		else{
 			Lista_ejercicios nuevo = new Lista_ejercicios();
@@ -128,8 +130,9 @@ public class CrearRutinaActivity extends Activity implements OnItemSelectedListe
 				}
 				crear_db.close();
 				
-				final Intent iratras = new Intent(this, RutinasPropiaActivity.class);
+				final Intent iratras = new Intent(this, TiposRutinasActivity.class);
 				startActivity(iratras);
+				finish();
 			}
 		}
 		

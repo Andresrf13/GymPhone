@@ -11,6 +11,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="30dp"
         android:text="@string/creada_titulo"
+        android:textColor="#FF6600"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <ListView
@@ -32,5 +33,7 @@
         android:layout_centerHorizontal="true"
         android:text="Crear Nueva Rutina"
         android:onClick="ircrearRutina" />
+
+  
 
 </RelativeLayout>

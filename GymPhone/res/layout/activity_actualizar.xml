@@ -12,6 +12,7 @@
         android:layout_marginLeft="93dp"
         android:layout_marginTop="48dp"
         android:text="@string/actualizar_titulo"
+        android:textColor="#FF6600"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <Button

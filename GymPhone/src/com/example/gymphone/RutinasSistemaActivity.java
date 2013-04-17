@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -17,6 +18,8 @@ public class RutinasSistemaActivity extends Activity{
 	ListView listamenu;
 	ArrayAdapter<String> adaptador;
 	ArrayList<String> datos;
+	int idRutinaSelec;
+	List<Lista_ejercicios> listaEjercicios ;
 	
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
@@ -32,9 +35,21 @@ public class RutinasSistemaActivity extends Activity{
 		listamenu.setOnItemClickListener(new AdapterView.OnItemClickListener(){
 
 			@Override
-			public void onItemClick(AdapterView<?> arg0, View vista, int posicion,
+			public void onItemClick(AdapterView<?> parent, View vista, int pos,
 					long arg3) {
-				Toast.makeText(getApplication(), "Clic en: "+(String)((TextView)vista).getText(),Toast.LENGTH_LONG ).show();				 
+				//Toast.makeText(getApplication(), "Clic en: "+(String)((TextView)vista).getText(),Toast.LENGTH_LONG ).show();
+				String seleccionado = ((String) parent.getItemAtPosition(pos)).toString();
+				//Toast.makeText(getApplication(), "Clic en: "+seleccionado, Toast.LENGTH_LONG ).show();
+				
+				rutina_sistema.open();
+				idRutinaSelec = rutina_sistema.getidRutina(seleccionado);
+				//Toast.makeText(getApplication(), "Clic en: "+idRutinaSelec, Toast.LENGTH_LONG ).show();
+				listaEjercicios = rutina_sistema.getListaEjercicios(idRutinaSelec);
+				rutina_sistema.close();				
+				//Toast.makeText(getApplication(), "Clic en: "+idRutinaSelec, Toast.LENGTH_LONG ).show();
+				//Toast.makeText(getApplication(), "Clic en: "+listaEjercicios.get(0).getejercicio(), Toast.LENGTH_LONG ).show();
+								
+				pasarInfo(idRutinaSelec);
 				
 			}
 			
@@ -53,5 +68,12 @@ public class RutinasSistemaActivity extends Activity{
 				datos.add(rutina_db.get(i).rutina_name);
 		}
 		rutina_sistema.close();		
+	}
+	public void pasarInfo(int rutina_id){					 
+		 Intent irRealizarRutina = new Intent(this, RealizarRutinaActivity.class);
+		 irRealizarRutina.putExtra("pos", 0);
+		 irRealizarRutina.putExtra("rutina_id", rutina_id);
+		 startActivity(irRealizarRutina);
+		
 	}
 }

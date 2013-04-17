@@ -12,6 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Crear Rutina"
+        android:textColor="#FF6600"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
 	    <TextView
@@ -45,22 +46,22 @@
 	        android:layout_width="match_parent"
 	        android:layout_margin="10sp"
 	        android:layout_height="wrap_content" />
-	
+
 	    <Button
 	        android:id="@+id/add_ejercicio"
 	        style="?android:attr/buttonStyleSmall"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:layout_margin="10sp"
-	        android:text="Agregar Ejercicio"
-	        android:onClick="add_ejercicio" />
+	        android:onClick="add_ejercicio"
+	        android:text="Agregar Ejercicio" />
 
-	    <TextView
+<!--  	    <TextView
 	        android:id="@+id/textView4"
 	        android:layout_width="wrap_content"
 	        android:layout_height="wrap_content"
 	        android:text="Lista de Ejercicios"
-	        android:textAppearance="?android:attr/textAppearanceSmall" />
+	        android:textAppearance="?android:attr/textAppearanceSmall" />-->
 
 	    <ListView
 	        android:id="@+id/lista_ejercicios1"
@@ -71,17 +72,6 @@
         </LinearLayout>
 
          <Button
-             android:id="@+id/finalizar_rutina"             
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content"
-             android:layout_alignParentBottom="true"
-             android:layout_alignParentLeft="true"
-             android:layout_margin="10sp"
-             android:layout_marginLeft="33dp"             
-             android:text="Crear Rutina"
-             android:onClick="crear_rutina" />
-
-         <Button
              android:id="@+id/cancelar_rutina"             
              android:layout_width="wrap_content"
              android:layout_height="wrap_content"
@@ -90,6 +80,16 @@
              android:layout_margin="10sp"
              android:layout_marginRight="33dp"
              android:text="Cancelar Rutina" />
+
+         <Button
+             android:id="@+id/finalizar_rutina"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_alignParentBottom="true"
+             android:layout_alignParentLeft="true"
+             android:layout_margin="10sp"
+             android:onClick="crear_rutina"
+             android:text="Crear Rutina" />
         
     </RelativeLayout>
 

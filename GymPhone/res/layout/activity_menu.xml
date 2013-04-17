@@ -12,6 +12,11 @@
         android:layout_marginLeft="38dp"
         android:layout_marginTop="108dp"
         android:text="@string/menu_titulo"
+        android:textColor="#FF6600"
+        android:shadowColor="#8a6603"
+        android:shadowDx="3" 
+        android:shadowDy="2" 
+        android:shadowRadius="1.8"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <ListView
@@ -20,7 +25,16 @@
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/textView1"
         android:layout_below="@+id/textView1"
+        android:textColor="#333333"
         android:layout_marginTop="36dp" >
     </ListView>
+
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/listaMenu"
+        android:layout_alignParentRight="true"
+        android:src="@drawable/android_manos_arriba" />
 
 </RelativeLayout>

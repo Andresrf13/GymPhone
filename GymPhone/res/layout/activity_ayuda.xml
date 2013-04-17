@@ -11,6 +11,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="35dp"
         android:text="@string/ayuda_titulo"
+        android:textColor="#FF6600"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <ListView

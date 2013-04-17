@@ -8,26 +8,6 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context=".LoginActivity" >
 
-    <ImageView
-        android:contentDescription="@string/desp_logo"
-        android:id="@+id/imageView1"
-        android:layout_width="100sp"
-        android:layout_height="100sp"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="18dp"
-        android:src="@drawable/logo" />
-    
-    <EditText
-        android:id="@+id/password_space"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/username_space"
-        android:layout_below="@+id/username_space"
-        android:layout_marginTop="62dp"
-        android:ems="10"
-        android:inputType="textPassword" />
-
     <EditText
         android:id="@+id/username_space"
         android:layout_width="wrap_content"
@@ -50,24 +30,41 @@
         android:text="@string/login_name"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
+    <ImageView
+        android:id="@+id/imageView1"
+        android:layout_width="100sp"
+        android:layout_height="100sp"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:contentDescription="@string/desp_logo"
+        android:src="@drawable/logo" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/password_space"
+        android:layout_centerHorizontal="true"
+        android:onClick="ir_Menu"
+        android:text="@string/boton_login" />
+
     <TextView
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/textView1"
         android:layout_below="@+id/username_space"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="29dp"
         android:text="@string/login_pass"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
-    <Button
-        android:id="@+id/button1"
+    <EditText
+        android:id="@+id/password_space"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="38dp"
-        android:text="@string/boton_login"
-        android:onClick="ir_Menu" />
+        android:layout_alignLeft="@+id/username_space"
+        android:layout_below="@+id/textView2"
+        android:ems="10"
+        android:inputType="textPassword" />
 
 </RelativeLayout>

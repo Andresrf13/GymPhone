@@ -12,6 +12,7 @@
         android:layout_centerHorizontal="true"
         android:layout_marginTop="32dp"
         android:text="@string/ranking_titulo"
+        android:textColor="#FF6600"
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <GridView
@@ -20,11 +21,11 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_below="@+id/textView1"
-        android:layout_marginLeft="18dp"
-        android:layout_marginTop="37dp"
         android:columnWidth="90dp"
+        android:numColumns="3"
         android:stretchMode="columnWidth"
-        android:numColumns="3" >
+        android:textColor="#333333" >
+
     </GridView>
 
 </RelativeLayout>

@@ -14,7 +14,9 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:text="@string/hello_world" />
+        android:text="@string/hello_world"
+        android:textColor="#FF6600"
+        android:textSize="18sp" />
 
     <Chronometer
         android:id="@+id/chronometer1"
@@ -39,6 +41,7 @@
             android:layout_above="@+id/chronometer1"
             android:layout_alignLeft="@+id/ScrollView01"
             android:text="@string/hello_world"
+            android:textColor="#000000"
             />
     </ScrollView>       
         
@@ -57,12 +60,13 @@
         android:layout_alignBaseline="@+id/botoninicio"
         android:layout_alignBottom="@+id/botoninicio"
         android:layout_toRightOf="@+id/chronometer1"
-        android:text="@string/detener" />
+        android:text="@string/detener"
+        android:textColor="#333333" />
 
     <ImageView
         android:id="@+id/cargarimagen"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="150sp"
         android:layout_above="@+id/ScrollView01"
         android:layout_centerHorizontal="true" />
 
@@ -71,8 +75,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginBottom="28dp"
-        android:layout_toLeftOf="@+id/chronometer1"
-        android:text="@string/inicio" />
+        android:layout_toRightOf="@+id/Title_ejercicio"
+        android:text="@string/inicio"
+        android:textColor="#333333" />
 
 </RelativeLayout>

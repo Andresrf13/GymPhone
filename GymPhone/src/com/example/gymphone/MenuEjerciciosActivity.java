@@ -48,7 +48,7 @@ public class MenuEjerciciosActivity extends Activity {
 	        TabHost.TabSpec spec=tabs.newTabSpec("mitab1");
 	        spec.setContent(R.id.listafuerza);
 	        spec.setIndicator("CARDIO", 
-	        res.getDrawable(android.R.drawable.ic_btn_speak_now));
+	        res.getDrawable(android.R.drawable.ic_dialog_alert));
 	        tabs.addTab(spec);
 	       
 	        datos1 = new ArrayList<String>();
@@ -60,7 +60,7 @@ public class MenuEjerciciosActivity extends Activity {
 			spec=tabs.newTabSpec("mitab2");
 	        spec.setContent(R.id.listacardio);
 	        spec.setIndicator("FUERZA", 
-	        res.getDrawable(android.R.drawable.ic_dialog_map));
+	        res.getDrawable(android.R.drawable.ic_dialog_info));
 	        tabs.addTab(spec);
 	        
 	        tabs.setCurrentTab(0);

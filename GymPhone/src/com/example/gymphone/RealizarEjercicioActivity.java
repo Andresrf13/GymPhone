@@ -20,7 +20,7 @@ public class RealizarEjercicioActivity extends Activity implements OnClickListen
 	Chronometer cronometro;
 	TextView titulo;
 	TextView instrucciones;
-	
+	String name_ejercicio;
 	long time = 0;
 	
 	@Override
@@ -29,7 +29,7 @@ public class RealizarEjercicioActivity extends Activity implements OnClickListen
 		setContentView(R.layout.activity_realizarejercicio);
 		
 		Bundle ejercicio = getIntent().getExtras();
-		final String name_ejercicio = ejercicio.getString("ejercicio1");
+		name_ejercicio = ejercicio.getString("ejercicio1");
 		//Toast.makeText(getApplication(),"ITEM "+name_ejercicio, Toast.LENGTH_LONG).show();
 		ejercicio_db = new DataSourceService(this);
 		ejercicio_db.open();
@@ -111,6 +111,19 @@ public class RealizarEjercicioActivity extends Activity implements OnClickListen
 			break;
 		case R.id.botondetener:
 			time=cronometro.getBase()-SystemClock.elapsedRealtime();
+			String chronoText = cronometro.getText().toString();
+			String array[] = chronoText.split(":");			
+			
+			String time1 = -1*(time/1000)+"";
+			int calorias = (int) (time * 0.0002);
+			calorias = calorias * -1;
+			
+			//Toast.makeText(getApplication(),"Tiempo "+time1, Toast.LENGTH_LONG).show();
+			
+			ejercicio_db.open();
+			esta_pagina = ejercicio_db.insertarejerciciosolo(name_ejercicio, time1, calorias);
+			ejercicio_db.close();
+			
 			cronometro.stop();
 			break;
 		}

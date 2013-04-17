@@ -34,7 +34,8 @@
         <activity  android:name="com.example.gymphone.EstadisticasActivity"></activity>
         <activity  android:name="com.example.gymphone.CrearRutinaActivity"></activity>
         <activity  android:name="com.example.gymphone.RealizarEjercicioActivity"></activity>
-        <activity  android:name="com.example.gymphone.AyudaformatActivity"></activity>             
+        <activity  android:name="com.example.gymphone.AyudaformatActivity"></activity>
+        <activity  android:name="com.example.gymphone.RealizarRutinaActivity"></activity>             
     </application>
 
 </manifest>

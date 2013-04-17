@@ -12,7 +12,9 @@
         android:id="@+id/titulo_ayuda"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/hello_world" />
+        android:text="@string/hello_world"
+        android:textColor="#FF6600"
+        android:textSize="18sp" />
 
     <LinearLayout
         android:id="@+id/linearLayout1"
@@ -23,7 +25,7 @@
         android:layout_marginTop="135dp" >
     </LinearLayout>
 
-      <ScrollView
+       <ScrollView
           android:id="@+id/ScrollView01"
           android:layout_width="fill_parent"
           android:layout_height="100sp"
@@ -38,9 +40,10 @@
               android:layout_alignParentRight="true"
               android:layout_below="@+id/titulo_ayuda"
               android:text="@string/hello_world"
-              android:textSize="14sp" />
+              android:textColor="#000000"
+              android:textSize="15sp" />
 
-      </ScrollView>
+     </ScrollView>
 
        <ImageView
           android:id="@+id/imagenayuda"

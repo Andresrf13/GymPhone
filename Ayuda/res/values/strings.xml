@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Ayuda</string>
+    <string name="action_settings">Settings</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="textogrande">Cuando se ingresa a la ventana de estadistica se debe elegir la opción de la rutina que desea verificar. Este muestra la cantidad de ejercicios, el tiempo y las calorias de 
+dicha rutina. 
+En la opcion ejercicio, se elige el ejercicio de esa rutina y se muestra el tiempo y las calorias quemadas.</string>
+    <string name="inicio">Inicio</string>
+    <string name="detener">Detener</string>
+
+</resources>

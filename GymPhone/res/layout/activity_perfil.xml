@@ -3,25 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
-    <TextView
-        android:id="@+id/textView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        android:text="@string/perfil_titulo"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
-    
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/edad_perfil"
-        android:layout_alignLeft="@+id/textView1"
-        android:text="@string/perfil_edad"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
     <EditText
         android:id="@+id/edad_perfil"
         android:layout_width="wrap_content"
@@ -42,16 +23,6 @@
         android:inputType="numberDecimal" >        
     </EditText>
 
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/peso_perfil"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="22dp"
-        android:onClick="irMenu"
-        android:text="@string/perfil_actualizar" />
-
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
@@ -59,16 +30,7 @@
         android:layout_above="@+id/estura_perfil"
         android:layout_centerHorizontal="true"
         android:text="@string/perfil_estatura"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
-
-    <TextView
-        android:id="@+id/textView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/estura_perfil"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="39dp"
-        android:text="@string/perfil_peso"
+        android:textColor="#666666"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
     <EditText
@@ -80,6 +42,44 @@
         android:ems="10"
         android:inputType="numberDecimal" />
 
-    
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:text="@string/perfil_titulo"
+        android:textColor="#FF6600"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/edad_perfil"
+        android:layout_alignLeft="@+id/textView1"
+        android:text="@string/perfil_edad"
+        android:textColor="#666666"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignRight="@+id/textView2"
+        android:layout_below="@+id/estura_perfil"
+        android:layout_marginTop="32dp"
+        android:text="@string/perfil_peso"
+        android:textColor="#666666"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/peso_perfil"
+        android:layout_centerHorizontal="true"
+        android:onClick="irMenu"
+        android:text="@string/perfil_actualizar" />
 
 </RelativeLayout>

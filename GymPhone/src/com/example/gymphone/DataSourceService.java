@@ -170,6 +170,24 @@ public class DataSourceService {
 			c.close();
 			return ejercicios;		
 		}
+		
+		public ArrayList<Lista_ejercicios> getListaEjercicios1(long x) {	
+			String s = String.valueOf(x);
+			String[] args = {s};
+			ArrayList<Lista_ejercicios> ejercicios = new ArrayList<Lista_ejercicios>(); 
+			String[] columnas = {"id_lista", "ejercicio", "rutina", "calorias", "tiempo"};
+			Cursor c = database.query("lista_ejercicios", columnas, "rutina=?", args, null, null, null);
+			
+			c.moveToFirst();
+			while (!c.isAfterLast()) {
+				Lista_ejercicios obtiene = setListaEjercicios(c);
+				ejercicios.add(obtiene);
+				c.moveToNext();
+			}
+			
+			c.close();
+			return ejercicios;		
+		}
 
 		private Lista_ejercicios setListaEjercicios(Cursor c) {
 			Lista_ejercicios nuevo_ejercicio = new Lista_ejercicios();
@@ -213,6 +231,8 @@ public class DataSourceService {
 			c.close();
 			return x;
 		}
+		
+		
 
 		//----------------------------INSERTAR UNA RUTINA EN LA BASE DE DATOS -------------------//
 		public int insertarlistarutina(int id_insert, String nombre_nueva) {
@@ -275,5 +295,39 @@ public class DataSourceService {
 			int result = c.getInt(0);							
 			c.close();
 			return result;
+		}
+		
+		//----------------------OBTIENE EL ID DE LISTA RUTINAS ----------------------------------//
+
+		public int getidRutina(String seleccionado) {
+			String[] args = {seleccionado};			
+			String[] columnas = {"id_listarutina", "rutina", "listarutina_name"};
+			Cursor c = database.query("lista_rutinas", columnas, "listarutina_name=?", args, null, null, null);
+			c.moveToFirst();			
+			int result = c.getInt(0);							
+			c.close();
+			return result;
+		}
+
+		public Ejercicios insertarejerciciosolo(String name_ejercicio, String tiempo, int calorias) {
+			ContentValues nuevoRegistro = new ContentValues();
+			nuevoRegistro.put("ejercicio", name_ejercicio);
+			nuevoRegistro.put("rutina",0);
+			nuevoRegistro.put("calorias", calorias);
+			nuevoRegistro.put("tiempo",tiempo);
+			database.insert("lista_ejercicios", null, nuevoRegistro);
+			
+			return null;
+		}
+
+		public Ejercicios actualizarEjercicio(long id_rutina, String time1,
+				int calorias) {
+			ContentValues cv=new ContentValues();
+			cv.put("calorias",calorias);
+			cv.put("tiempo",time1);									
+			this.open();					
+			database.update("lista_ejercicios", cv, "id_lista='"+id_rutina+"'", null);		
+			this.close();
+			return null;
 		}
 }
